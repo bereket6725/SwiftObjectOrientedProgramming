@@ -168,3 +168,81 @@ class Furniture: Product {
     
 }
 
+
+
+//class with using an optional property
+class Electronic : Product {
+    //an optional can be nil, and since we are not initializing it, batters is nil
+    var batteries : Bool?
+}
+
+let toy = Electronic(title: "RC Car", price: 79)
+toy.batteries //value is nil, but thats cool since its an optional
+
+toy.batteries = true
+toy.batteries!
+
+//Often used when creating IBOUtlets in iOS apps
+if let batteries = toy.batteries {
+    
+    if batteries{
+        print("batteries included")
+    }
+}
+
+
+//--------------------------------------------------------------------------------------------//
+                                //Classes VS Structs
+
+//Classes are Reference types and Structs are Value types
+
+
+//Class = reference type
+class ProductClass
+{
+    var title:String
+    var price:Double = 0.0
+    
+    //designated initializer
+    init(title:String, price:Double){
+        self.title = title
+        self.price = price
+    }
+    
+    //class method
+    func discountedPrice(percentage:Double)->Double
+    {
+        return price - (price*percentage/100)
+    }
+    
+}
+
+
+var phoneClass = ProductClass(title: "iPhone 6", price: 800)
+var bigPhoneClass = phoneClass
+bigPhoneClass.title
+bigPhoneClass.title = "iPhone 6+"
+phoneClass.title
+
+
+//struct = value type
+struct ProductStruct {
+    
+    var title:String
+    var price:Double = 0.0
+    
+}
+
+
+var phoneStruct = ProductStruct(title: "Nexus", price: 500)
+
+var bigPhoneStruct = phoneStruct
+bigPhoneStruct.title
+bigPhoneStruct.title = "iPhone 6+"
+
+phoneStruct.title// phoneStruct and bigPhoneStruct are completely independent instances, this is fundamental to understanding the differences between classes and structs 
+
+//Classes become more complex to manage because their values affect eachother
+
+
+
