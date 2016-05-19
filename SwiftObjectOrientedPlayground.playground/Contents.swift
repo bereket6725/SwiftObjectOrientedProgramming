@@ -117,3 +117,22 @@ class RoundButton: Button {
         super.init(width: width, height: height)
     }
 }
+
+
+
+
+//example of a class using getter and setter methods
+class Temperature {
+    var celsius: Float = 0.0
+    var fahrenheit: Float {
+        get{
+            return (celsius * 1.8) + 32
+        }
+        set {
+            //cannot use fahrenheit, must use special variable "newValue" to set a computed property
+            celsius = (newValue - 32) / 1.8
+        }
+    }
+}
+
+
