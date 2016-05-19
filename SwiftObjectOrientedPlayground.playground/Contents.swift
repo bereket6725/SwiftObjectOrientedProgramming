@@ -136,3 +136,35 @@ class Temperature {
 }
 
 
+//another class using getter and setters
+class Furniture: Product {
+    
+    var height: Double
+    var width : Double
+    var length: Double
+    //computed properties cannot be immutable (let) properties,
+    //this is a getter method
+    var surfaceArea: Double {
+        get{
+            return length*width
+        }
+        set{
+            length = sqrt(newValue)
+            width = sqrt(newValue)
+        }
+    }
+    
+    init( title: String,
+          price: Double,
+          height:Double,
+          width: Double,
+          length:Double ) {
+        self.height = height
+        self.width  = width
+        self.length = length
+        super.init(title:title, price:price)
+    }
+    
+    
+}
+
