@@ -337,4 +337,17 @@ class Car: Vehicle {
 
 
 //------------------------------------------------------------------------------------------------------//
+//Struct Example 
 
+struct TodoItem {
+    var title     = "Default title"
+    var content   = "Default content"
+    var dueDate   = NSDate()
+    let owner: String
+}
+
+extension TodoItem {
+    init(owner:String) {
+        self.owner = owner
+    }
+}
