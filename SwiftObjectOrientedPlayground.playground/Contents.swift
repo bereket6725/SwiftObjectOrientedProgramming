@@ -5,6 +5,7 @@ import UIKit
 var str = "Hello, playground"
 
 //testing github
+//second test
 
 //classes
 class Product
