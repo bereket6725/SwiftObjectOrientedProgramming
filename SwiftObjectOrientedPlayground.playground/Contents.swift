@@ -7,6 +7,7 @@ var str = "Hello, playground"
 //testing github
 //second test
 
+
 //classes
 class Product
 {
@@ -353,3 +354,12 @@ extension TodoItem {
         self.owner = owner
     }
 }
+
+//enum example via We<3Swift
+enum iOSDeviceType {
+    case iPhone
+    case iPad
+    case iWatch
+}
+
+var myDevice = iOSDeviceType.iPhone
